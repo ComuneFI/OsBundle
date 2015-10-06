@@ -26,7 +26,7 @@ class OsFunctions {
                 return "/usr/bin/php";
             }
         }
-        
+
         throw new Exception("Php non trovato");
     }
 
@@ -39,6 +39,40 @@ class OsFunctions {
         } else {
             return false;
         }
+    }
+
+    static function httpCurl($url, $fields = array()) {
+        $postvars = '';
+        foreach ($fields as $key => $value) {
+            $postvars .= $key . "=" . $value;
+        }
+        $httpscall = curl_init();
+        curl_setopt($httpscall, CURLOPT_URL, $url);
+        curl_setopt($httpscall, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($httpscall, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($httpscall, CURLOPT_PROXY, null);
+        curl_setopt($httpscall, CURLOPT_POST, count($fields));
+        curl_setopt($httpscall, CURLOPT_POSTFIELDS, $postvars);
+        curl_setopt($httpscall, CURLOPT_HEADER, 0);
+        curl_setopt($httpscall, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+        curl_setopt($httpscall, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($httpscall);
+        curl_close($httpscall);
+        return $result;
+    }
+
+    static function httpCurlResponse($url) {
+        $httpscall = curl_init();
+        curl_setopt($httpscall, CURLOPT_URL, $url);
+        curl_setopt($httpscall, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($httpscall, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($httpscall, CURLOPT_PROXY, null);
+        curl_setopt($httpscall, CURLOPT_HEADER, 0);
+        curl_setopt($httpscall, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+        curl_setopt($httpscall, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($httpscall);
+        curl_close($httpscall);
+        return $result;
     }
 
 }
