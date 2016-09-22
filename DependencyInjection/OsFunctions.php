@@ -12,7 +12,7 @@ class OsFunctions {
             //In caso di windows
             $paths = explode(PATH_SEPARATOR, getenv('PATH'));
             foreach ($paths as $path) {
-                $php_executable = $path . DIRECTORY_SEPARATOR . "php" . (isset($_SERVER["WINDIR"]) ? ".exe" : "");
+                $php_executable = $path . DIRECTORY_SEPARATOR . "php" . (isset($_SERVER["WINDIR"]) || isset($_SERVER["windir"]) ? ".exe" : "");
                 if (file_exists($php_executable) && is_file($php_executable)) {
                     return $php_executable;
                 }
@@ -27,7 +27,7 @@ class OsFunctions {
             }
         }
 
-        throw new Exception("Php non trovato");
+        throw new \Exception("Php non trovato");
     }
 
     /**
