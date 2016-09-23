@@ -7,8 +7,7 @@ use Fi\OsBundle\DependencyInjection\OsFunctions;
 
 class OsFunctionsTest extends WebTestCase
 {
-
-    protected function setUp() 
+    protected function setUp()
     {
         /* require_once __DIR__.'/../../AppKernel.php';
 
@@ -17,21 +16,20 @@ class OsFunctionsTest extends WebTestCase
           $container = $kernel->getContainer(); */
     }
 
-    public function testFunctions() 
+    public function testFunctions()
     {
         $this->assertContains('php', OsFunctions::getPHPExecutableFromPath());
         if (PHP_OS == 'WINNT') {
             $this->assertTrue(OsFunctions::isWindows());
-            $this->assertEquals(OsFunctions::getSeparator(), "&");
+            $this->assertEquals(OsFunctions::getSeparator(), '&');
         } else {
             $this->assertFalse(OsFunctions::isWindows());
-            $this->assertEquals(OsFunctions::getSeparator(), ";");
+            $this->assertEquals(OsFunctions::getSeparator(), ';');
         }
-        $dirtest = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "testosbundle";
+        $dirtest = sys_get_temp_dir().DIRECTORY_SEPARATOR.'testosbundle';
         mkdir($dirtest);
         $this->assertTrue(file_exists($dirtest));
         OsFunctions::delTree($dirtest);
         $this->assertFalse(file_exists($dirtest));
     }
-
 }
