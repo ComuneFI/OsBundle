@@ -14,8 +14,8 @@
     bootstrap                   = "src/Tests/bootstrap.php" >
 
     <testsuites>
-        <testsuite name="Pannello Amministrazione test suite">
-            <directory suffix="Test.php">./src/Tests</directory>
+        <testsuite name="OsBundle test suite">
+            <directory suffix=".php">./src/Tests/</directory>
         </testsuite>
     </testsuites>
     

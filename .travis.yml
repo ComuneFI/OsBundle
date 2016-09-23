@@ -7,7 +7,6 @@ php:
 
 before_script:
   - composer install
-  - composer config -g secure-http false
 
 script:
   - ant
