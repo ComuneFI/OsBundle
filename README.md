@@ -10,7 +10,7 @@ Installazione:
 - Aggiungere nel file composer.json (root del progetto) nella sezione:
 ```
     {
-    "name": "symfony/framework-standard-edition",
+    "name": "ComuneFI/NomeProgetto",
         "license": "MIT",
         "type": "project",
         "description": "The \"Symfony Standard Edition\" distribution",
