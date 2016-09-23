@@ -21,17 +21,17 @@ class OsFunctionsTest extends WebTestCase
     {
         $this->assertContains('php', OsFunctions::getPHPExecutableFromPath());
         if (PHP_OS == 'WINNT') {
-			$this->assertTrue(OsFunctions::isWindows());
-			$this->assertEquals(OsFunctions::getSeparator(),"&");
-		}else{
-			$this->assertFalse(OsFunctions::isWindows());
-			$this->assertEquals(OsFunctions::getSeparator(),";");
-		}
-		$dirtest = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "testosbundle";
-		mkdir($dirtest);
-		$this->assertTrue(file_exists($dirtest));
-		OsFunctions::delTree($dirtest);
-		$this->assertFalse(file_exists($dirtest));
+            $this->assertTrue(OsFunctions::isWindows());
+            $this->assertEquals(OsFunctions::getSeparator(), "&");
+        }else{
+               $this->assertFalse(OsFunctions::isWindows());
+               $this->assertEquals(OsFunctions::getSeparator(), ";");
+        }
+        $dirtest = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "testosbundle";
+        mkdir($dirtest);
+        $this->assertTrue(file_exists($dirtest));
+        OsFunctions::delTree($dirtest);
+        $this->assertFalse(file_exists($dirtest));
         
         
     }
