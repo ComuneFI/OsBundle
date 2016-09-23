@@ -41,6 +41,14 @@ class OsFunctions {
         }
     }
 
+    static function getSeparator() {
+        if (self::isWindows()) {
+            return '&';
+        } else {
+            return ';';
+        }
+    }
+
     static function httpCurl($url, $fields = array()) {
         $postvars = '';
         foreach ($fields as $key => $value) {
