@@ -26,4 +26,3 @@ Installazione:
 ```
     "fi/osbundle": "2.0.*",
 ```
-- Aggiungere nel file app/AppKernel.php nella funzione registerBundles;
