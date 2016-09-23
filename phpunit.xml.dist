@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="OsBundle test suite">
-            <directory suffix=".php">./src/Tests/</directory>
+            <directory suffix=".php">src/Tests</directory>
         </testsuite>
     </testsuites>
     
