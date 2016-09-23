@@ -31,10 +31,10 @@ class OsFunctionsTest extends WebTestCase
         $this->assertTrue(file_exists($dirtest));
         OsFunctions::delTree($dirtest);
         $this->assertFalse(file_exists($dirtest));
-        $url = 'https://www.google.com/';
+        $url = 'http://www.php.net/';
         $retget = OsFunctions::httpCurlResponse($url);
-        $this->assertContains('302 Moved', $retget);
+        $this->assertContains('PHP', $retget);
         $retpost = OsFunctions::httpCurl($url);
-        $this->assertContains('405', $retpost);
+        $this->assertContains('PHP', $retpost);
     }
 }
