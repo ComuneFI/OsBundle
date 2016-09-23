@@ -1,4 +1,0 @@
-#autenticazione_homepage:
-#    pattern:  /hello/{name}
-#    defaults: { _controller: OsBundle:Default:index }
-

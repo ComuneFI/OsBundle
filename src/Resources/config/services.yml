@@ -1,8 +1,0 @@
-parameters:
-#    os.example.class: Fi\osBundle\Example
-
-services:
-#    os.example:
-#        class: %os.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-  
