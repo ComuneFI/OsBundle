@@ -1,5 +1,8 @@
 OsBundle
 =============
+[![Build Status](https://travis-ci.org/ComuneFI/OsBundle.svg?branch=master)]
+(https://travis-ci.org/ComuneFI/OsBundle) [![Coverage Status](https://img.shields.io/coveralls/ComuneFI/OsBundle.svg)] 
+(https://coveralls.io/r/ComuneFI/OsBundle)
 
 Installazione:
 -------------
