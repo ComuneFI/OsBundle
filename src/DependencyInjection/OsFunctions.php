@@ -31,6 +31,7 @@ class OsFunctions
                 }
             } catch (\Exception $exc) {
                 //se non si trova si prova in altra posizione
+                return "/usr/bin/php";
             }
         }
 
