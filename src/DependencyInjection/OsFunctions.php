@@ -21,6 +21,9 @@ class OsFunctions
             }
         } else {
             //In caso altri sistemi operativi (linux)
+            if (PHP_BINDIR) {
+                return PHP_BINDIR . DIRECTORY_SEPARATOR . "php";
+            }
             try {
                 $phpPath = exec('which php');
                 if (file_exists($phpPath)) {
@@ -28,9 +31,6 @@ class OsFunctions
                 }
             } catch (\Exception $exc) {
                 //se non si trova si prova in altra posizione
-            }
-            if (PHP_BINDIR) {
-                return PHP_BINDIR . DIRECTORY_SEPARATOR . "php";
             }
         }
 
